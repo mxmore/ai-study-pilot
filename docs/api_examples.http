@@ -1,0 +1,25 @@
+### 获取健康状态
+GET http://localhost:8000/health
+
+### 列出题目
+GET http://localhost:8000/api/questions?knowledge_code=ALG-001&limit=5
+
+### 自适应出题
+POST http://localhost:8000/api/questions/adaptive
+Content-Type: application/json
+
+{
+  "user_id": "00000000-0000-0000-0000-000000000001",
+  "knowledge_code": "ALG-001",
+  "difficulty": 0.5
+}
+
+### 提交题目反馈
+POST http://localhost:8000/api/questions/q-1/review
+Content-Type: application/json
+
+{
+  "rating": 5,
+  "feedback": "题目清晰，解析详尽",
+  "flag_issue": false
+}
