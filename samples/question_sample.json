@@ -1,0 +1,20 @@
+{
+  "prompt": "What is the solution to 2x + 3 = 11?",
+  "question_type": "single_choice",
+  "options": [
+    { "label": "A", "value": "2" },
+    { "label": "B", "value": "3" },
+    { "label": "C", "value": "4" },
+    { "label": "D", "value": "5" }
+  ],
+  "answer": {
+    "correct": ["C"],
+    "explanation": "Subtract 3 and divide by 2 to solve."
+  },
+  "knowledge_codes": ["ALG-001"],
+  "difficulty": 0.45,
+  "source_span": {
+    "document_id": "doc-1",
+    "chunk_index": 0
+  }
+}
