@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GeneratedQuestion",
+  "type": "object",
+  "required": ["prompt", "question_type", "knowledge_codes", "difficulty"],
+  "properties": {
+    "prompt": { "type": "string", "minLength": 10 },
+    "question_type": {
+      "type": "string",
+      "enum": ["single_choice", "multiple_choice", "true_false", "short_answer", "essay"]
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "value"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "value": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "answer": {
+      "type": "object",
+      "required": ["correct"],
+      "properties": {
+        "correct": {
+          "type": "array",
+          "items": { "type": ["string", "boolean"] },
+          "minItems": 1
+        },
+        "explanation": { "type": "string" }
+      }
+    },
+    "knowledge_codes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "difficulty": { "type": "number", "minimum": 0, "maximum": 1 },
+    "source_span": {
+      "type": "object",
+      "properties": {
+        "document_id": { "type": "string" },
+        "chunk_index": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}
