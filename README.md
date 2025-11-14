@@ -39,8 +39,6 @@ FastAPI 提供基础接口：
 - `POST /api/questions/{id}/review`
 - `POST /api/documents/ingest`
 
-接口的 OpenAPI/Swagger 文档默认托管在 `http://localhost:8000/docs`，Redoc 版本位于 `http://localhost:8000/redoc`，支持直接试调请求。
-
 ### Worker
 ```
 python backend/worker/worker.py
@@ -68,5 +66,3 @@ python scripts/validate_question.py
 ## 第三方能力
 
 详见 [docs/integration_overview.md](docs/integration_overview.md)，涵盖 MinIO、OpenAI/Qwen3、Document Intelligence、向量搜索与消息队列等对接要点。
-
-Windows 本地调试与第三方服务 Docker 启动流程，请参考 [docs/windows_local_debug.md](docs/windows_local_debug.md)。
